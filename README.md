@@ -1,15 +1,20 @@
-# digital-cell
+# Unity learning notes
 
 # English version
 --
-Inspiration:
-How are lives and wisdom formed? After playing the game ' detroit become human' I asked myself.
-We've already known that all the lives consist of cells. Cells' collaborative work guarantee their nutritional intake. I wonder if it is possible to simulate the processing on the computer.
-# Chinese version
---
-灵感:
-我想要试着探究生命与智慧的形成过程
-这个问题是受到了最近电子游戏《底特律：成为人类》的启发。
-生命是如何诞生的？中国古代早有“道生一”的理论，但是更加令人信服的，是近代西方产生的物种进化学说，其理论重点在于自然环境对于性状的选择。
-如果能用计算机来设计一个完备的系统模拟这一过程，结果又会是怎么样？
------
+Function names:
+1.Fixedupdate and Update
+  Fixedupdate and Update have some differences.
+  Framerate is number of frames per second. 
+  Variable framerate is what you get when you start the next frame right after the last one stops. The framerate over any section of time   will depend on the performance of the code in it.
+  Fixed framerate means that it's always the same, for every single frame.
+  A fixed framerate frame is a single cycle of the update loop for a fixed framerate game loop.
+  Unity has both a variable framerate loop (Update) and a fixed framerate loop (FixedUpdate). As noted, The FixedUpdate loop is  
+  primarily meant for physics in Unity.So put this simply,Fixedupdate is used when you want to do some physics effect in unity.
+  Update is primarily used when you want to handle the visual effect.
+2.OntriggerEnter
+  OnTriggerEnter is called when the Collider other enters the trigger.
+  This message is sent to the trigger collider and the rigidbody (or the collider if there is no rigidbody) that touches the trigger.
+  Note: Trigger events are only sent if one of the colliders also has a rigidbody attached. Trigger events will be sent to disabled 
+  MonoBehaviours, to allow enabling Behaviours in response to collisions.
+

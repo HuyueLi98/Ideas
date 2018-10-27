@@ -8,3 +8,5 @@ Function names:
 2.OntriggerEnter    
   OnTriggerEnter is called when the Collider other enters the trigger. This message is sent to the trigger collider and the rigidbody (or the collider if there is no rigidbody) that touches the trigger. Note: Trigger events are only sent if one of the colliders also has a rigidbody attached. Trigger events will be sent to disabled MonoBehaviours, to allow enabling Behaviours in response to collisions.  
 
+3.Colliders
+Collider components define the shape of an object for the purposes of physical collisions.A collider,which is invisible,need not to be the exact same shape as the object's mesh and in fact, a rough approximation is oftem more efficient and indistinguishable in gameplay.

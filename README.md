@@ -10,3 +10,6 @@ Function names:
 
 3.Colliders
 Collider components define the shape of an object for the purposes of physical collisions.A collider,which is invisible,need not to be the exact same shape as the object's mesh and in fact, a rough approximation is oftem more efficient and indistinguishable in gameplay.
+ 
+ 4.Quaternion
+ Quaternions are used to represent rotations.They are based on complex numbers and are not easy to understand intuitively. You almost never access or modify individual Quaternion components (x,y,z,w); most often you would just take existing rotations (e.g. from the Transform) and use them to construct new rotations (e.g. to smoothly interpolate between two rotations). The Quaternion functions that you use 99% of the time are: Quaternion.LookRotation, Quaternion.Angle, Quaternion.Euler, Quaternion.Slerp, Quaternion.FromToRotation, and Quaternion.identity. (The other functions are only for exotic uses.)

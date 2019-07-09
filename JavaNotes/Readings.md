@@ -7,3 +7,29 @@ The second kind of exception is the error. These are exceptional conditions that
 
 ### Runtime Exceptions
 The third kind of exception is the runtime exception. These are exceptional conditions that are internal to the application, and that the application usually cannot anticipate or recover from. These usually indicate programming bugs, such as logic errors or improper use of an API. For example, consider the application described previously that passes a file name to the constructor for FileReader. If a logic error causes a null to be passed to the constructor, the constructor will throw NullPointerException. The application can catch this exception, but it probably makes more sense to eliminate the bug that caused the exception to occur.
+
+## How to create a file and write into it
+
+## Write with BufferedWriter
+BufferedWriter writer=new BufferedWriter(new FileWriter(fileName)
+
+## write with PrintWriter
+PrintWriter printWriter = new PrintWriter(fileWriter);
+Notice that it will not only write the contexts into a file, but also show them on Console. As far as I know, it is one of the most characteristic feature of PrintWriter. 
+
+## Write with FileOutputStream
+FileOutputStream outputStream = new FileOutputStream(fileName);
+Use FileOutputStream to write binary data to a file.
+## Write with DataOutputSteam
+    String value = "Hello";
+    FileOutputStream fos = new FileOutputStream(fileName);
+    DataOutputStream outStream = new DataOutputStream(new BufferedOutputStream(fos));
+    outStream.writeUTF(value);
+    outStream.close();
+ 
+    // verify the results
+    String result;
+    FileInputStream fis = new FileInputStream(fileName);
+    DataInputStream reader = new DataInputStream(fis);
+    result = reader.readUTF();
+    reader.close();

@@ -10,17 +10,17 @@ The third kind of exception is the runtime exception. These are exceptional cond
 
 ## How to create a file and write into it
 
-## Write with BufferedWriter
+### Write with BufferedWriter
 BufferedWriter writer=new BufferedWriter(new FileWriter(fileName)
 
-## write with PrintWriter
+### write with PrintWriter
 PrintWriter printWriter = new PrintWriter(fileWriter);
 Notice that it will not only write the contexts into a file, but also show them on Console. As far as I know, it is one of the most characteristic feature of PrintWriter. 
 
-## Write with FileOutputStream
+### Write with FileOutputStream
 FileOutputStream outputStream = new FileOutputStream(fileName);
 Use FileOutputStream to write binary data to a file.
-## Write with DataOutputSteam
+### Write with DataOutputSteam
     String value = "Hello";
     FileOutputStream fos = new FileOutputStream(fileName);
     DataOutputStream outStream = new DataOutputStream(new BufferedOutputStream(fos));
@@ -33,3 +33,14 @@ Use FileOutputStream to write binary data to a file.
     DataInputStream reader = new DataInputStream(fis);
     result = reader.readUTF();
     reader.close();
+  
+# Problems that I met
+## JDBC Problem
+### using preparedstatement
+String sql = "select * from user2 where id = ? ";
+            PreparedStatement ps =con.prepareStatement(sql);
+
+            ps.setInt(1,1);
+
+            ps.execute();
+the code above is ok. But when writing "sql" into ps.execute(), an SQLSyntaxErrorException will occur. This is because the execute method reads in sql as a whole but ignored the "?".

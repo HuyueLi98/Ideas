@@ -37,7 +37,7 @@ Use FileOutputStream to write binary data to a file.
 # Problems that I met
 ## JDBC Problem
 ### using preparedstatement
-String sql = "select * from user2 where id = ? ";
+            String sql = "select * from user2 where id = ? ";
             PreparedStatement ps =con.prepareStatement(sql);
 
             ps.setInt(1,1);
